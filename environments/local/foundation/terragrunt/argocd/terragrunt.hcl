@@ -16,5 +16,11 @@ inputs = {
   release_name  = "argocd"
   chart_version = "9.5.13"
   timeout       = 1800
-  extra_values  = {}
+  extra_values = {
+    server = {
+      extraArgs = [
+        "--insecure"
+      ]
+    }
+  }
 }
