@@ -10,7 +10,6 @@ terraform {
 inputs = {
   cluster_name = include.root.locals.env.locals.management_cluster_name
   server_count = 1
-  agent_count  = 2
+  agent_count  = 0
   k3s_version  = "v1.31.5-k3s1"
-  api_port     = 6443
 }
