@@ -3,12 +3,16 @@ include "root" {
   expose = true
 }
 
+include "providers" {
+  path = find_in_parent_folders("providers.hcl")
+}
+
 terraform {
-  source = "${include.root.locals.env.locals.blueprints_repo}//foundation/argocd?ref=${include.root.locals.env.locals.blueprints_ref}"
+  source = "${include.root.locals.env.locals.blueprints_repo}//terraform-modules/argocd?ref=${include.root.locals.env.locals.blueprints_ref}"
 }
 
 dependencies {
-  paths = ["../k3d"]
+  paths = ["../../clusters/management"]
 }
 
 inputs = {
