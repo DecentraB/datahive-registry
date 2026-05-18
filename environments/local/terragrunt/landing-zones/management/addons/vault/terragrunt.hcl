@@ -12,7 +12,7 @@ terraform {
 }
 
 dependencies {
-  paths = ["../../clusters/management"]
+  paths = ["../../cluster"]
 }
 
 inputs = {

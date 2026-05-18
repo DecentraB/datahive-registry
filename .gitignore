@@ -2,6 +2,7 @@
 .terragrunt-cache/
 *.tfstate*
 *.tfvars
+terragrunt_rendered.json
 
 !.example
 

@@ -3,12 +3,16 @@ include "root" {
   expose = true
 }
 
+locals {
+  zone = read_terragrunt_config(find_in_parent_folders("zone.hcl"))
+}
+
 terraform {
   source = "${include.root.locals.env.locals.blueprints_repo}//terraform-modules/cluster/k3d?ref=${include.root.locals.env.locals.blueprints_ref}"
 }
 
 inputs = {
-  cluster_name = include.root.locals.env.locals.management_cluster_name
+  cluster_name = local.zone.locals.cluster_name
   server_count = 1
   agent_count  = 0
   k3s_version  = "v1.31.5-k3s1"
