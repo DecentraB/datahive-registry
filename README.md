@@ -51,11 +51,11 @@ Use `domains/_template/products/_template` when onboarding a new data product.
 Apply the full local stack:
 
 ```bash
-terragrunt run-all apply --working-dir datahive-registry/environments/local/terragrunt --queue-include-external --source-update --source-map "git::ssh://git@github.com/DecentraB/datahive-blueprints.git=${PWD}/datahive-blueprints"
+terragrunt run --all apply --working-dir datahive-registry/environments/local/terragrunt --source-map "git::ssh://git@github.com/DecentraB/datahive-blueprints.git=${PWD}/datahive-blueprints"
 ```
 
 Apply only the local Kubernetes clusters:
 
 ```bash
-terragrunt run-all apply --working-dir datahive-registry/environments/local/terragrunt --queue-include-dir "landing-zones/*/cluster" --queue-strict-include --queue-include-external --source-update --source-map "git::ssh://git@github.com/DecentraB/datahive-blueprints.git=${PWD}/datahive-blueprints"
+terragrunt run --all apply --working-dir datahive-registry/environments/local/terragrunt --queue-include-dir "landing-zones/*/cluster" --source-map "git::ssh://git@github.com/DecentraB/datahive-blueprints.git=${PWD}/datahive-blueprints"
 ```
