@@ -8,7 +8,7 @@ include "providers" {
 }
 
 terraform {
-  source = "${include.root.locals.env.locals.blueprints_repo}//terraform-modules/argocd?ref=${include.root.locals.env.locals.blueprints_ref}"
+  source = "${include.root.locals.env.locals.platform_repo}//blueprints/terraform-modules/argocd?ref=${include.root.locals.env.locals.blueprints_ref}"
 }
 
 dependencies {
